@@ -44,6 +44,7 @@ def complete_task(auth_token, quest_id):
         print(f"Task completion status: {quest_status}")
         return quest_status == "COMPLETED"
     else:
+        print("Join Grup: https://t.me/dasarpemulung")
         print(f"Failed to complete task: {response.status_code}, {response.text}")
         return False
 
@@ -59,9 +60,11 @@ def claim_task(auth_token, quest_id):
     response = requests.post(url, headers=headers)
     if response.status_code == 200:
         data = response.json()
+        print("Join Grup: https://t.me/dasarpemulung")
         quest_status = data.get('questStatus', 'No quest status')
         print(f"Task claim status: {quest_status}")
     else:
+        print("Join Grup: https://t.me/dasarpemulung")
         print(f"Failed to claim task: {response.status_code}, {response.text}")
 
 def perform_task_workflow():
